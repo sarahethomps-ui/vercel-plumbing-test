@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Keep the printed output clean and full-width */
+  .print-full-bleed {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Avoid awkward splits on headings/sections */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid-page;
+  }
+}
