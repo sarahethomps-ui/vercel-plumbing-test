@@ -38,7 +38,7 @@ export const STEPS: WorkbookStep[] = [
         label: "Choose your feature.",
         helpText:
           "What AI feature are you designing? Define it in 1–2 sentences.",
-        type: "shortText",
+        type: "longText",
         placeholder: "Enter your response…",
       },
       {
@@ -46,7 +46,7 @@ export const STEPS: WorkbookStep[] = [
         label: "Who is your target user?",
         helpText:
           "Be specific about who they are (age, profession, etc.), what situation they're in, what they are trying to do, and what constraints might shape their behavior.",
-        type: "shortText",
+        type: "longText",
         placeholder: "Enter your response…",
       },
       {
@@ -68,7 +68,7 @@ export const STEPS: WorkbookStep[] = [
         label: "Which mental model is the best fit for your feature?",
         helpText:
           "Which mental model of AI would best serve your users? Consider models like: Assistant, Coach, Tool, Collaborator, etc.",
-        type: "shortText",
+        type: "longText",
         placeholder: "Enter your response…",
       },
       {
@@ -88,7 +88,7 @@ export const STEPS: WorkbookStep[] = [
         label: "Is AI front and center (more salient), or behind the scenes (less salient)?",
         helpText:
           "If it's more salient, what is your stated value to the user?",
-        type: "shortText",
+        type: "longText",
         placeholder: "Enter your response…",
       },
       {
@@ -155,7 +155,7 @@ export const STEPS: WorkbookStep[] = [
       {
         id: "q6_name",
         label: "If yes, the name is",
-        type: "shortText",
+        type: "longText",
         placeholder: "Enter your response…",
       },
       {
