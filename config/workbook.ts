@@ -219,8 +219,6 @@ export const STEPS: WorkbookStep[] = [
       {
         id: "q7_control",
         label: "How do you want to increase user control? Select all that apply",
-        helpText:
-          "Choose every pattern you want reflected in the prototype. Examples in parentheses illustrate each option.",
         type: "multiSelect",
         options: [
           'Explain — Tell the user why the AI did what it did ("I blocked this slot because your mornings are usually free — keep it?")',
