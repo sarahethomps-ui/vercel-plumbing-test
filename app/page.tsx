@@ -12,12 +12,11 @@ export default function Home() {
             <div className="text-slate-500">The Psychology of AI User Experiences</div>
           </div>
 
-          <div className="space-y-3 text-slate-700">
+          <div className="text-slate-700">
             <p>
               This is an interactive workbook. Your answers are saved in this
               browser.
             </p>
-            <p>Click Begin to start.</p>
           </div>
 
           <div className="mt-10 flex justify-end">
