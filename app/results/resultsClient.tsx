@@ -124,8 +124,8 @@ export function ResultsClient() {
             <div className="mb-4 text-sm font-semibold text-slate-500">
               Prompt for AI to build your prototype
             </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-900 px-5 py-4 text-sm text-slate-50">
-              <pre className="whitespace-pre-wrap font-mono">{prompt}</pre>
+            <div className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm text-slate-900 shadow-sm">
+              <pre className="whitespace-pre-wrap font-mono text-slate-900">{prompt}</pre>
             </div>
           </div>
         )}
