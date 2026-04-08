@@ -186,8 +186,7 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q7_control",
-        label:
-          "How do you want to increase user control? Select all that apply.",
+        label: "How do you want to increase user control? Select all that apply",
         helpText:
           "Choose every pattern you want reflected in the prototype. Examples in parentheses illustrate each option.",
         type: "multiSelect",
