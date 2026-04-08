@@ -126,7 +126,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q5_minimum",
         label: "List the THREE essentials a first-time user needs to succeed.",
         helpText:
-          "Be concrete: what must they understand or do before they can succeed?",
+          "",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -134,16 +134,9 @@ export const STEPS: WorkbookStep[] = [
         id: "q5_assumptions",
         label: "List THREE assumptions you might need to correct.",
         helpText:
-          "What might users wrongly believe about the product, AI, or the task?",
+          "What might users wrongly believe or expect about the product, AI, or the task?",
         type: "longText",
         placeholder: "Enter your response…",
-      },
-      {
-        id: "q5_notes",
-        label:
-          "NOTES: List everything you could tell a new user about your AI feature (capabilities, limits, tips).",
-        type: "longText",
-        placeholder: "Add your notes here…",
       },
     ],
   },
