@@ -51,7 +51,7 @@ export const STEPS: WorkbookStep[] = [
       },
       {
         id: "q1_problem",
-        label: "Choose one type of user friction to address.",
+        label: "Which user friction(s) are you addressing.",
         helpText:
           "Is the user struggling with Volume, Discovery, Expertise, Quality, Decision, or Time?",
         type: "longText",
@@ -69,13 +69,13 @@ export const STEPS: WorkbookStep[] = [
   },
   {
     id: 2,
-    title: "Which mental model is the best fit?",
+    title: "What's the mental model?",
     fields: [
       {
         id: "q2_mental_model",
         label: "Which mental model is the best fit for your feature?",
         helpText:
-          "Which mental model of AI would best serve your users? Consider models like: Assistant, Coach, Tool, Collaborator, etc.",
+          "Consider models like Tool, Engine, Workspace, Assistant, Companion etc.",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -93,7 +93,7 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q3_salience",
-        label: "Is AI front and center (more salient), or behind the scenes (less salient)?",
+        label: "Is AI more salient (front and center), or less salient (behind the scenes?",
         helpText:
           "If it's more salient, what is your stated value to the user?",
         type: "longText",
@@ -113,8 +113,8 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q4_form_factor",
-        label: "What is the right form factor for your feature?",
-        helpText: "Pick the interface that best fits the work.",
+        label: "What form factor is best for your feature?",
+        helpText: "Pick the interface that fits the user and the task.",
         type: "radio",
         options: ["GUI", "Chat", "Hybrid"],
       },
@@ -128,11 +128,11 @@ export const STEPS: WorkbookStep[] = [
   },
   {
     id: 5,
-    title: "What is the minimum the user needs to know to get started?",
+    title: "How much guidance should the user get?",
     fields: [
       {
         id: "q5_minimum",
-        label: "List THREE essentials a first-time user needs to succeed.",
+        label: "List THREE essentials a first-time user needs to know to succeed.",
         helpText:
           "",
         type: "longText",
@@ -142,7 +142,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q5_assumptions",
         label: "List THREE assumptions you might need to correct.",
         helpText:
-          "What might users wrongly believe or expect about the product, AI, or the task?",
+          "What might users wrongly believe or expect about the product? E.g. what can it do or not do?",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -154,9 +154,9 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q6_has_name",
-        label: "Does it have a name?",
+        label: "Does it have a humanized name?",
         helpText:
-          "Based on the mental model you chose, decide if giving it a name adds clarity and warmth—or risks misleading expectations.",
+          "Based on the mental model you chose, decide if a humanized name makes sense.",
         type: "radio",
         options: ["Yes", "No"],
       },

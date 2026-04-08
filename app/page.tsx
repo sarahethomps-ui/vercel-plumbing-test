@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { WORKBOOK_SUBTITLE, WORKBOOK_TITLE } from "../config/workbook";
 
 export default function Home() {
   return (
@@ -7,9 +8,9 @@ export default function Home() {
         <div className="w-full rounded-2xl bg-white/80 p-10 shadow-sm ring-1 ring-black/5">
           <div className="mb-8 flex items-center gap-3">
             <div className="text-2xl font-semibold text-slate-900">
-              8 Questions
+              {WORKBOOK_TITLE}
             </div>
-            <div className="text-slate-500">The Psychology of AI User Experiences</div>
+            <div className="text-slate-500">{WORKBOOK_SUBTITLE}</div>
           </div>
 
           <div className="text-slate-700">
