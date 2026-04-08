@@ -26,7 +26,7 @@ export const PAUSE_MESSAGE = "Please wait for the instructor before continuing."
 // For now, this is a safe placeholder that we’ll replace verbatim later.
 export const PROMPT_PREAMBLE = `Build a one-shot, click-through proof-of-concept prototype based on the answers to the 8 questions below.\n\nThe goal is to demonstrate exceptionally well-designed AI-informed UX and strong general UX for the given use case.\n\nIn addition to the prompt below, the prototype should look professionally designed and long enough to be apparent in the design. The prototype must look professionally designed and should be usable. There is no back-end; simulate AI behavior with believable sample content and state changes that are revealed by clicking through screens.\n\nFocus on clarity, speed to first success, best-practice, ethical AI patterns.\n\nInclude a gear icon to visit a page where you reiterate all of the requirements for each of the 8 questions, along with that requirement was specifically manifest in the design of the app you build.\n`;
 
-export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nHow does AI help address this friction?\n{{q1_solution}}\n\nDo users prefer AI for this task?\n{{q1_prefer_ai}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: What is the minimum the user needs to know to get started?\nList the THREE essentials:\n{{q5_minimum}}\n\nList THREE assumptions you might need to correct:\n{{q5_assumptions}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n{{q6_notes}}\n\nQuestion 7: How much control should the user have?\nSelected ways to increase user control:\n{{q7_control}}\n\nNotes:\n{{q7_notes}}\n\nQuestion 8: How to manage trust?\n{{q8_trust}}\n`;
+export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nHow does AI help address this friction?\n{{q1_solution}}\n\nDo users prefer AI for this task?\n{{q1_prefer_ai}}\n\nHow will you measure success?\n{{q1_success}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: What is the minimum the user needs to know to get started?\nList the THREE essentials:\n{{q5_minimum}}\n\nList THREE assumptions you might need to correct:\n{{q5_assumptions}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n{{q6_notes}}\n\nQuestion 7: How much control should the user have?\nSelected ways to increase user control:\n{{q7_control}}\n\nNotes:\n{{q7_notes}}\n\nQuestion 8: How to manage trust?\n{{q8_trust}}\n`;
 
 export const STEPS: WorkbookStep[] = [
   {
@@ -73,6 +73,14 @@ export const STEPS: WorkbookStep[] = [
         type: "longText",
         placeholder: "Enter your response…",
       },
+      {
+        id: "q1_success",
+        label: "How will you measure success?",
+        helpText:
+          "Think about the metrics you would track to know whether it's actually helping users and delivering value.",
+        type: "longText",
+        placeholder: "Enter your response…",
+      },
     ],
   },
   {
@@ -83,7 +91,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q2_mental_model",
         label: "Which mental model is the best fit for your feature?",
         helpText:
-          "Consider models like Tool, Engine, Workspace, Assistant, Companion etc.",
+          "Consider metaphors like Tool, Engine, Workspace, Assistant, Companion etc.",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -101,9 +109,9 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q3_salience",
-        label: "Is AI more salient (front and center), or less salient (behind the scenes?",
+        label: "Is AI more salient (front and center), or less salient (behind the scenes?)",
         helpText:
-          "If it's more salient, what is your stated value to the user?",
+          "If AI is more salient, what is your stated value to the user?",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -122,7 +130,7 @@ export const STEPS: WorkbookStep[] = [
       {
         id: "q4_form_factor",
         label: "What form factor is best for your feature?",
-        helpText: "Pick the interface that fits the user and the task.",
+        helpText: "Pick an interface that fits the user and the task.",
         type: "radio",
         options: ["GUI", "Chat", "Hybrid"],
       },
@@ -150,7 +158,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q5_assumptions",
         label: "List THREE assumptions you might need to correct.",
         helpText:
-          "What might users wrongly believe or expect about the product? E.g. what can it do or not do?",
+          "What might users wrongly believe or expect about the product? Make limitations or capabilities more explicit",
         type: "longText",
         placeholder: "Enter your response…",
       },
