@@ -26,7 +26,7 @@ export const PAUSE_MESSAGE = "Please wait for the instructor before continuing."
 // For now, this is a safe placeholder that we’ll replace verbatim later.
 export const PROMPT_PREAMBLE = `Build a one-shot, click-through proof-of-concept prototype based on the answers to the 8 questions below.\n\nThe goal is to demonstrate exceptionally well-designed AI-informed UX and strong general UX for the given use case.\n\nIn addition to the prompt below, the prototype should look professionally designed and long enough to be apparent in the design. The prototype must look professionally designed and should be usable. There is no back-end; simulate AI behavior with believable sample content and state changes that are revealed by clicking through screens.\n\nFocus on clarity, speed to first success, best-practice, ethical AI patterns.\n\nInclude a gear icon to visit a page where you reiterate all of the requirements for each of the 8 questions, along with that requirement was specifically manifest in the design of the app you build.\n`;
 
-export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: What is the minimum the user needs to know to get started?\n{{q5_minimum}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n{{q6_notes}}\n\nQuestion 7: How much should you do for the user, and what should they control?\n{{q7_control}}\n\nQuestion 8: How to manage trust?\n{{q8_trust}}\n`;
+export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: What is the minimum the user needs to know to get started?\nList the THREE essentials:\n{{q5_minimum}}\n\nList THREE assumptions you might need to correct:\n{{q5_assumptions}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n{{q6_notes}}\n\nQuestion 7: How much should you do for the user, and what should they control?\n{{q7_control}}\n\nQuestion 8: How to manage trust?\n{{q8_trust}}\n`;
 
 export const STEPS: WorkbookStep[] = [
   {
@@ -45,15 +45,15 @@ export const STEPS: WorkbookStep[] = [
         id: "q1_target_user",
         label: "Who is your target user?",
         helpText:
-          "Be specific about what group of people you are designing for. Consider age, context, constraints, profession, etc.",
+          "Be specific about who they are (age, profession, etc.), what situation they're in, what they are trying to do, and what constraints might shape their behavior.",
         type: "shortText",
         placeholder: "Enter your response…",
       },
       {
         id: "q1_problem",
-        label: "Choose one type of user friction to address: Volume, Discovery, Time, Decision, Expertise, Quality",
+        label: "Choose one type of user friction to address: Volume, Discovery, Expertise, Quality, Decision, Time",
         helpText:
-          "How does AI help address this friction? (Helps users Understand, Create, Decide, or Act",
+          "And specify how AI helps address this friction: Helps users Understand, Create, Decide, or Act",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -85,9 +85,9 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q3_salience",
-        label: "Is AI front and center, or behind the scenes?",
+        label: "Is AI front and center (more salient), or behind the scenes (less salient)?",
         helpText:
-          "Does mentioning AI make the value proposition more believable? Are users excited or anxious about AI for this task?",
+          "If it's more salient, what is your stated value to the user?",
         type: "shortText",
         placeholder: "Enter your response…",
       },
@@ -108,7 +108,7 @@ export const STEPS: WorkbookStep[] = [
         label: "What is the right form factor for your feature?",
         helpText: "Pick the interface that best fits the work.",
         type: "radio",
-        options: ["GUI based", "Chat based", "Hybrid of GUI and chat"],
+        options: ["GUI", "Chat", "Hybrid"],
       },
       {
         id: "q4_notes",
@@ -126,7 +126,15 @@ export const STEPS: WorkbookStep[] = [
         id: "q5_minimum",
         label: "List the THREE essentials a first-time user needs to succeed.",
         helpText:
-          "In addition to what users need to know, what assumptions might they have that you need to correct?",
+          "Be concrete: what must they understand or do before they can succeed?",
+        type: "longText",
+        placeholder: "Enter your response…",
+      },
+      {
+        id: "q5_assumptions",
+        label: "List THREE assumptions you might need to correct.",
+        helpText:
+          "What might users wrongly believe about the product, AI, or the task?",
         type: "longText",
         placeholder: "Enter your response…",
       },
