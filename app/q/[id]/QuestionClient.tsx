@@ -4,7 +4,13 @@ import React from "react";
 import { STEPS, type WorkbookStep } from "../../../config/workbook";
 import { useWorkbook } from "../../providers";
 import { Button, LinkButton } from "../../../components/Button";
-import { FieldLabel, RadioGroup, TextArea, TextInput } from "../../../components/Field";
+import {
+  FieldLabel,
+  MultiSelectGroup,
+  RadioGroup,
+  TextArea,
+  TextInput,
+} from "../../../components/Field";
 import { WorkbookShell } from "../../../components/WorkbookShell";
 import { ProgressPill } from "../../../components/ProgressPill";
 
@@ -36,6 +42,14 @@ function FieldRenderer({
       ) : null}
       {field.type === "radio" ? (
         <RadioGroup
+          name={field.id}
+          value={value}
+          options={field.options ?? []}
+          onChange={setValue}
+        />
+      ) : null}
+      {field.type === "multiSelect" ? (
+        <MultiSelectGroup
           name={field.id}
           value={value}
           options={field.options ?? []}

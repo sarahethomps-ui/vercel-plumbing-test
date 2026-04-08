@@ -1,4 +1,4 @@
-export type FieldType = "shortText" | "longText" | "radio";
+export type FieldType = "shortText" | "longText" | "radio" | "multiSelect";
 
 export type WorkbookField = {
   id: string;
@@ -16,7 +16,7 @@ export type WorkbookStep = {
   fields: WorkbookField[];
 };
 
-export const WORKBOOK_TITLE = "8 Questions";
+export const WORKBOOK_TITLE = "Design Workbook";
 export const WORKBOOK_SUBTITLE = "The Psychology of AI User Experiences";
 
 export const PAUSE_TITLE = "Pause Here";
@@ -26,7 +26,7 @@ export const PAUSE_MESSAGE = "Please wait for the instructor before continuing."
 // For now, this is a safe placeholder that we’ll replace verbatim later.
 export const PROMPT_PREAMBLE = `Build a one-shot, click-through proof-of-concept prototype based on the answers to the 8 questions below.\n\nThe goal is to demonstrate exceptionally well-designed AI-informed UX and strong general UX for the given use case.\n\nIn addition to the prompt below, the prototype should look professionally designed and long enough to be apparent in the design. The prototype must look professionally designed and should be usable. There is no back-end; simulate AI behavior with believable sample content and state changes that are revealed by clicking through screens.\n\nFocus on clarity, speed to first success, best-practice, ethical AI patterns.\n\nInclude a gear icon to visit a page where you reiterate all of the requirements for each of the 8 questions, along with that requirement was specifically manifest in the design of the app you build.\n`;
 
-export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: What is the minimum the user needs to know to get started?\nList the THREE essentials:\n{{q5_minimum}}\n\nList THREE assumptions you might need to correct:\n{{q5_assumptions}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n{{q6_notes}}\n\nQuestion 7: How much should you do for the user, and what should they control?\n{{q7_control}}\n\nQuestion 8: How to manage trust?\n{{q8_trust}}\n`;
+export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: What is the minimum the user needs to know to get started?\nList the THREE essentials:\n{{q5_minimum}}\n\nList THREE assumptions you might need to correct:\n{{q5_assumptions}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n{{q6_notes}}\n\nQuestion 7: How much control should the user have?\nSelected ways to increase user control:\n{{q7_control}}\n\nNotes:\n{{q7_notes}}\n\nQuestion 8: How to manage trust?\n{{q8_trust}}\n`;
 
 export const STEPS: WorkbookStep[] = [
   {
@@ -124,7 +124,7 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q5_minimum",
-        label: "List the THREE essentials a first-time user needs to succeed.",
+        label: "List THREE essentials a first-time user needs to succeed.",
         helpText:
           "",
         type: "longText",
@@ -167,10 +167,10 @@ export const STEPS: WorkbookStep[] = [
       },
       {
         id: "q6_competency",
-        label: "What is its competency?",
-        helpText: "Set user expectations for skill level.",
+        label: "How will you frame its level of competence?",
+        helpText: "Set user expectations about your AI's ability.",
         type: "radio",
-        options: ["I’m an expert", "I’m competent", "I’m a beginner and can make mistakes"],
+        options: ["Beginner", "Intermediate", "Expert"],
       },
       {
         id: "q6_notes",
@@ -182,15 +182,22 @@ export const STEPS: WorkbookStep[] = [
   },
   {
     id: 7,
-    title: "How much should you do for the user, and what should they control?",
+    title: "How much control should the user have?",
     fields: [
       {
         id: "q7_control",
-        label: "How much should you do for the user? What should they control?",
+        label:
+          "How do you want to increase user control? Select all that apply.",
         helpText:
-          "Balance automation with agency. Decide when to recommend, preview, clarify, or get consent.",
-        type: "longText",
-        placeholder: "Enter your response…",
+          "Choose every pattern you want reflected in the prototype. Examples in parentheses illustrate each option.",
+        type: "multiSelect",
+        options: [
+          'Explain — Tell the user why the AI did what it did ("I blocked this slot because your mornings are usually free — keep it?")',
+          'Preview — Show the output before committing it ("Here\'s the draft email — send as is or make edits?")',
+          'Clarify — Ask the user to specify what they want ("Should I optimize this for speed or for quality?")',
+          'Consent — Ask permission before automating future behavior ("Allow me to auto-fill future expense reports?")',
+          'Delay — Slow the process down to keep the user involved ("Take 5 minutes to draft your outline. Then I\'ll help you refine it.")',
+        ],
       },
       {
         id: "q7_notes",
