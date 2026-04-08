@@ -9,7 +9,7 @@ export function WorkbookShell({
   rightBadge?: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-[#f4fbfa]">
+    <div className="app-shell-bg">
       <div className="mx-auto max-w-5xl px-6 py-10 print-full-bleed">
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-baseline gap-3">
