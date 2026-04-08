@@ -51,9 +51,9 @@ export const STEPS: WorkbookStep[] = [
       },
       {
         id: "q1_problem",
-        label: "What problem are you solving? Why does AI help solve this problem?",
+        label: "Choose one type of user friction to address: Volume, Discovery, Time, Decision, Expertise, Quality",
         helpText:
-          "What task are you doing for them, and how will AI make it better (faster, higher quality, more enjoyable, greater quantity)?",
+          "How does AI help address this friction? (Helps users Understand, Create, Decide, or Act",
         type: "longText",
         placeholder: "Enter your response…",
       },

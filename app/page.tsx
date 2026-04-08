@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#f4fbfa]">
@@ -19,12 +21,12 @@ export default function Home() {
           </div>
 
           <div className="mt-10 flex justify-end">
-            <a
+            <Link
               href="/q/1"
               className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800"
             >
               Begin
-            </a>
+            </Link>
           </div>
         </div>
       </div>
