@@ -13,18 +13,21 @@ async function copyText(text: string) {
   await navigator.clipboard.writeText(text);
 }
 
+/** Plain text matching the Answers tab: "Your Answers", each Q line, field labels + values (no Update links). */
 function buildAnswersClipboardText(answers: Record<string, string>) {
-  const blocks: string[] = [];
+  const parts: string[] = ["Your Answers", ""];
   for (const step of STEPS) {
-    const lines: string[] = [`Q${step.id} — ${step.title}`, ""];
+    parts.push(`Q${step.id} — ${step.title}`);
+    parts.push("");
     for (const f of step.fields) {
-      lines.push(f.label);
-      lines.push(answers[f.id]?.trim() ? answers[f.id] : "—");
-      lines.push("");
+      parts.push(f.label);
+      // Match AnswerRollup: show raw stored value if truthy, else em dash
+      parts.push(answers[f.id] ? answers[f.id] : "—");
+      parts.push("");
     }
-    blocks.push(lines.join("\n").trimEnd());
+    parts.push("");
   }
-  return blocks.join("\n\n").trim();
+  return parts.join("\n").trimEnd();
 }
 
 function AnswerRollup({ answers }: { answers: Record<string, string> }) {
@@ -88,7 +91,7 @@ export function ResultsClient() {
       rightBadge={
         <div className="no-print">
           <Button type="button" variant="secondary" onClick={onPrint}>
-            Download
+            Print
           </Button>
         </div>
       }
