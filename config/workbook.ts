@@ -195,14 +195,8 @@ export const STEPS: WorkbookStep[] = [
         id: "q6_tone",
         label: "What is the tone?",
         helpText: "Choose the tone that fits your users and context.",
-        type: "radio",
-        options: [
-          "Very robotic",
-          "Professional",
-          "Friendly",
-          "Very empathic",
-          "Not relevant",
-        ],
+        type: "longText",
+        placeholder: "Enter your response…",
       },
       {
         id: "q6_competency",
