@@ -14,15 +14,18 @@ export default function Home() {
           </div>
 
           <div className="mb-8 flex justify-center px-2 sm:justify-start">
-            <img
-              src="/hero-title.jpg"
-              width={1024}
-              height={682}
-              alt="Illustration of a friendly brain and robot shaking hands, representing human and AI collaboration"
-              className="h-auto w-full max-w-md object-contain"
-              decoding="async"
-              fetchPriority="high"
-            />
+            {/* White mat + mix-blend-screen: knocks out solid black when the file has no alpha (JPEG). */}
+            <div className="isolate rounded-xl bg-white p-3 sm:p-4">
+              <img
+                src="/hero-title.jpg"
+                width={1024}
+                height={682}
+                alt="Illustration of a friendly brain and robot shaking hands, representing human and AI collaboration"
+                className="h-auto w-full max-w-md object-contain mix-blend-screen"
+                decoding="async"
+                fetchPriority="high"
+              />
+            </div>
           </div>
 
           <div className="text-slate-700">
