@@ -13,6 +13,20 @@ async function copyText(text: string) {
   await navigator.clipboard.writeText(text);
 }
 
+function buildAnswersClipboardText(answers: Record<string, string>) {
+  const blocks: string[] = [];
+  for (const step of STEPS) {
+    const lines: string[] = [`Q${step.id} — ${step.title}`, ""];
+    for (const f of step.fields) {
+      lines.push(f.label);
+      lines.push(answers[f.id]?.trim() ? answers[f.id] : "—");
+      lines.push("");
+    }
+    blocks.push(lines.join("\n").trimEnd());
+  }
+  return blocks.join("\n\n").trim();
+}
+
 function AnswerRollup({ answers }: { answers: Record<string, string> }) {
   return (
     <div className="space-y-10">
@@ -53,7 +67,7 @@ export function ResultsClient() {
   const prompt = React.useMemo(() => buildPrompt(state.answers), [state.answers]);
 
   const onCopyAnswers = async () => {
-    const text = JSON.stringify(state.answers, null, 2);
+    const text = buildAnswersClipboardText(state.answers);
     await copyText(text);
     setCopied("answers");
     window.setTimeout(() => setCopied(null), 1200);
@@ -72,10 +86,7 @@ export function ResultsClient() {
   return (
     <WorkbookShell
       rightBadge={
-        <div className="no-print flex items-center gap-2">
-          <Button type="button" variant="secondary" onClick={onCopyAnswers}>
-            {copied === "answers" ? "Copied" : "Copy"}
-          </Button>
+        <div className="no-print">
           <Button type="button" variant="secondary" onClick={onPrint}>
             Download
           </Button>
@@ -106,8 +117,11 @@ export function ResultsClient() {
           </button>
 
           <div className="ml-auto flex items-center gap-2 pr-1">
+            <Button type="button" variant="secondary" onClick={onCopyAnswers}>
+              {copied === "answers" ? "Copied" : "Copy Answers"}
+            </Button>
             <Button type="button" variant="secondary" onClick={onCopyPrompt}>
-              {copied === "prompt" ? "Copied" : "Code"}
+              {copied === "prompt" ? "Copied" : "Copy Prompt"}
             </Button>
           </div>
         </div>
