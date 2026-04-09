@@ -13,21 +13,6 @@ export default function Home() {
             <div className="text-base text-slate-500">{WORKBOOK_SUBTITLE}</div>
           </div>
 
-          <div className="mb-8 flex justify-center px-2 sm:justify-start">
-            {/* White mat + mix-blend-screen: knocks out solid black when the file has no alpha (JPEG). */}
-            <div className="isolate rounded-xl bg-white p-3 sm:p-4">
-              <img
-                src="/hero-title.jpg"
-                width={1024}
-                height={682}
-                alt="Illustration of a friendly brain and robot shaking hands, representing human and AI collaboration"
-                className="h-auto w-full max-w-md object-contain mix-blend-screen"
-                decoding="async"
-                fetchPriority="high"
-              />
-            </div>
-          </div>
-
           <div className="text-slate-700">
             <p>
               This interactive workbook will walk you through eight questions
