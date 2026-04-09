@@ -227,15 +227,15 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q7_control",
-        label: "Select all that apply",
+        label: "Consider these tactics and select all that apply",
         type: "multiSelect",
         options: [
-          'Explain — Tell the user why the AI did what it did ("I blocked this slot because your mornings are usually free — keep it?")',
-          'Preview — Show the output before committing it ("Here\'s the draft email — send as is or make edits?")',
+          'Explain — Tell the user why the product did what it did ("I blocked this slot because your mornings are usually free — keep it?")',
+          'Preview — Show the output before executing ("Here\'s the draft email — send as is or make edits?")',
           'Clarify — Ask the user to specify what they want ("Should I optimize this for speed or for quality?")',
           'Consent — Ask permission before automating future behavior ("Allow me to auto-fill future expense reports?")',
           'Delay — Slow the process down to keep the user involved ("Take 5 minutes to draft your outline. Then I\'ll help you refine it.")',
-          "Other - explain in notes",
+          "Other - Explain in notes",
         ],
       },
       {
