@@ -51,17 +51,17 @@ export const STEPS: WorkbookStep[] = [
       },
       {
         id: "q1_problem",
-        label: "Which user friction(s) are you addressing.",
+        label: "Which user friction(s) are you addressing? Choose all that apply and describe them.",
         helpText:
-          "6 types of user friction:Volume, Discovery, Expertise, Quality, Decision, or Time?",
+          "Six types of user friction: Volume, Discovery, Expertise, Quality, Decision, and Time",
         type: "longText",
         placeholder: "Enter your response…",
       },
       {
         id: "q1_solution",
-        label: "How does AI help address this friction?",
+        label: "How does AI help address each of these frictions?",
         helpText:
-          "4 uses of AI: Understand, Create, Decide, or Act for them",
+          "How AI can help: Understand, Create, Decide, or Act",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -89,7 +89,7 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q2_mental_model",
-        label: "Which mental model is the best fit for your feature?",
+        label: "Which mental model is the best fit for your product/feature?",
         helpText:
           "Consider metaphors like Tool, Engine, Workspace, Assistant, Companion etc.",
         type: "longText",
@@ -129,7 +129,7 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q4_form_factor",
-        label: "What form factor is best for your feature?",
+        label: "What form factor is best for your product/feature?",
         helpText: "Pick an interface that fits the user and the task.",
         type: "radio",
         options: ["GUI", "Chat", "Hybrid"],
