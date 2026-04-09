@@ -37,7 +37,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q1_feature",
         label: "What AI feature or product are you designing?",
         helpText:
-          "Describe it in 1-2 sentences, focusing on what the user can do with it.",
+          "Describe it in 1-2 sentences, focusing on what the user can do.",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -45,7 +45,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q1_target_user",
         label: "Who is your target user?",
         helpText:
-          "Be specific about their demographics, context, and primary goal.)",
+          "Be specific about their demographics, context, and primary goal.",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -59,7 +59,7 @@ export const STEPS: WorkbookStep[] = [
       },
       {
         id: "q1_solution",
-        label: "How does AI help address each of the frictions you selected?",
+        label: "How does AI address those frictions?",
         helpText:
           "Consider whether AI helps the user Understand, Create, Decide, or Act.",
         type: "longText",
