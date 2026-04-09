@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { WORKBOOK_SUBTITLE, WORKBOOK_TITLE } from "../config/workbook";
 
@@ -20,10 +21,20 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-10 flex justify-end">
+          <div className="mt-10 flex flex-col items-center gap-8 sm:flex-row sm:items-end sm:justify-between">
+            <div className="w-full max-w-sm shrink-0 sm:max-w-[min(100%,320px)]">
+              <Image
+                src="/hero-human-ai.png"
+                alt="Illustration of a friendly brain and robot shaking hands, representing human and AI collaboration"
+                width={842}
+                height={476}
+                className="h-auto w-full object-contain"
+                priority
+              />
+            </div>
             <Link
               href="/q/1"
-              className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800"
+              className="inline-flex shrink-0 items-center justify-center rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800 sm:self-end"
             >
               Begin
             </Link>
