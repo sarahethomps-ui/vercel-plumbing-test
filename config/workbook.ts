@@ -194,7 +194,7 @@ export const STEPS: WorkbookStep[] = [
       {
         id: "q6_tone",
         label: "What is the tone?",
-        helpText: "Choose the tone that fits your users and context.",
+        helpText: "Is it neutral, mechanical,professional, friendly, empathetic or something else?",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -227,7 +227,7 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q7_control",
-        label: "How do you want to increase user control? Select all that apply",
+        label: "Select all that apply",
         type: "multiSelect",
         options: [
           'Explain — Tell the user why the AI did what it did ("I blocked this slot because your mornings are usually free — keep it?")',
@@ -235,6 +235,7 @@ export const STEPS: WorkbookStep[] = [
           'Clarify — Ask the user to specify what they want ("Should I optimize this for speed or for quality?")',
           'Consent — Ask permission before automating future behavior ("Allow me to auto-fill future expense reports?")',
           'Delay — Slow the process down to keep the user involved ("Take 5 minutes to draft your outline. Then I\'ll help you refine it.")',
+          "Other - explain in notes",
         ],
       },
       {
