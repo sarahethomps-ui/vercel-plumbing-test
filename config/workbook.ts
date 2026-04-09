@@ -156,17 +156,18 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q5_minimum",
-        label: "List THREE essentials a first-time user needs to know to succeed.",
-        helpText:
-          "",
+        label: "List THREE essentials about the product/feature that a first-time user needs to know to succeed.",
+        helpText: 
+          "How will you make the product's capabilities more explicit?"
+          ,
         type: "longText",
         placeholder: "Enter your response…",
       },
       {
         id: "q5_assumptions",
-        label: "List THREE assumptions you might need to correct.",
+        label: "What might users wrongly believe or expect about the product/feature?",
         helpText:
-          "What might users wrongly believe or expect about the product? Make limitations or capabilities more explicit",
+          "How will you make the product's limitations more explicit?",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -178,7 +179,7 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q6_has_name",
-        label: "Does it have a humanized name?",
+        label: "Does your product/feature have a humanized name?",
         helpText:
           "Based on the mental model you chose, decide if a humanized name makes sense.",
         type: "radio",
@@ -186,7 +187,7 @@ export const STEPS: WorkbookStep[] = [
       },
       {
         id: "q6_name",
-        label: "If yes, the name is",
+        label: "What is the name of your product/feature?",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -195,7 +196,13 @@ export const STEPS: WorkbookStep[] = [
         label: "What is the tone?",
         helpText: "Choose the tone that fits your users and context.",
         type: "radio",
-        options: ["Very robotic", "Professional", "Friendly", "Very empathic"],
+        options: [
+          "Very robotic",
+          "Professional",
+          "Friendly",
+          "Very empathic",
+          "Not relevant",
+        ],
       },
       {
         id: "q6_competency",
@@ -208,7 +215,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q6_control_human",
         label: "Can users control how human the AI feels?",
         helpText:
-          "Can they adjust the name, tone, personality, etc.?",
+          "Can they adjust the name, tone, personality, etc.? If so, how?",
         type: "longText",
         placeholder: "Enter your response…",
       },
