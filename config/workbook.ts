@@ -35,9 +35,9 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q1_feature",
-        label: "Choose your feature.",
+        label: "What are you designing?",
         helpText:
-          "What AI feature are you designing? Define it in 1–2 sentences.",
+          "Choose an AI feature/product to design. Describe it in 1-2 sentences.",
         type: "longText",
         placeholder: "Enter your response…",
       },
