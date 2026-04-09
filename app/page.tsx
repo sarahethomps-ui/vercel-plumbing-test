@@ -15,11 +15,11 @@ export default function Home() {
 
           <div className="mb-8 flex justify-center px-2 sm:justify-start">
             <img
-              src="/hero-title.png"
-              width={884}
-              height={524}
+              src="/hero-title.jpg"
+              width={1024}
+              height={682}
               alt="Illustration of a friendly brain and robot shaking hands, representing human and AI collaboration"
-              className="h-auto w-full max-w-md rounded-xl object-contain"
+              className="h-auto w-full max-w-md object-contain"
               decoding="async"
               fetchPriority="high"
             />
