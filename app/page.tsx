@@ -15,8 +15,8 @@ export default function Home() {
 
           <div className="text-slate-700">
             <p>
-              This is an interactive workbook that will walk you through eight
-              design questions for user-centered AI experiences.
+              This interactive workbook will walk you through eight questions
+              for designing user-centered AI experiences.
             </p>
           </div>
 
