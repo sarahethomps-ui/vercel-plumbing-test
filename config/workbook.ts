@@ -234,7 +234,7 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q7_control",
-        label: "Consider these tactics and select all that apply",
+        label: "Consider these tactics and select all that apply.",
         type: "multiSelect",
         options: [
           'Explain — Tell the user why the product did what it did ("I blocked this slot because your mornings are usually free — keep it?")',
