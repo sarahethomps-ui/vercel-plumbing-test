@@ -132,7 +132,15 @@ export const STEPS: WorkbookStep[] = [
         label: "What form factor is best for your product/feature?",
         helpText: "Pick an interface that fits the user and the task.",
         type: "radio",
-        options: ["GUI", "Chat", "Hybrid"],
+        options: [
+          "GUI",
+          "Chat",
+          "Hybrid",
+          "Invisible",
+          "Voice",
+          "Command line",
+          "Other",
+        ],
       },
       {
         id: "q4_notes",
