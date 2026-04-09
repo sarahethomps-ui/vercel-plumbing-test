@@ -253,7 +253,7 @@ export const STEPS: WorkbookStep[] = [
       {
         id: "q8_trust",
         label:
-          "Do you want to include confidence indicators? If yes, what types. If no, why not?",
+          "Do you want to include confidence indicators? If yes, what types? If no, why not?",
         helpText: "",
         type: "longText",
         placeholder: "Enter your response…",
@@ -261,6 +261,8 @@ export const STEPS: WorkbookStep[] = [
       {
         id: "q8_errors",
         label: "How will you handle errors?",
+        helpText:
+          "Do you want to convey empathy, learning or something else?",
         type: "longText",
         placeholder: "Enter your response…",
       },
