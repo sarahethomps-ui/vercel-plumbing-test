@@ -26,7 +26,7 @@ export const PAUSE_MESSAGE = "Please wait for the instructor before continuing."
 // For now, this is a safe placeholder that we’ll replace verbatim later.
 export const PROMPT_PREAMBLE = `Build a one-shot, click-through proof-of-concept prototype based on the answers to the 8 questions below.\n\nThe goal is to demonstrate exceptionally well-designed AI-informed UX and strong general UX for the given use case.\n\nIn addition to the prompt below, the prototype should look professionally designed and long enough to be apparent in the design. The prototype must look professionally designed and should be usable. There is no back-end; simulate AI behavior with believable sample content and state changes that are revealed by clicking through screens.\n\nFocus on clarity, speed to first success, best-practice, ethical AI patterns.\n\nInclude a gear icon to visit a page where you reiterate all of the requirements for each of the 8 questions, along with that requirement was specifically manifest in the design of the app you build.\n`;
 
-export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nHow does AI help address this friction?\n{{q1_solution}}\n\nDo users prefer AI for this task?\n{{q1_prefer_ai}}\n\nHow will you measure success?\n{{q1_success}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: How much guidance do you want to give the user?\nList the THREE essentials:\n{{q5_minimum}}\n\nList THREE assumptions you might need to correct:\n{{q5_assumptions}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n\nCan users control how human the AI feels?\n{{q6_control_human}}\n\n{{q6_notes}}\n\nQuestion 7: How much control should the user have?\nSelected ways to increase user control:\n{{q7_control}}\n\nNotes:\n{{q7_notes}}\n\nQuestion 8: How to manage trust?\n{{q8_trust}}\n\nHow will you handle errors?\n{{q8_errors}}\n\n{{q8_notes}}\n`;
+export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nHow does AI help address this friction?\n{{q1_solution}}\n\nDo users prefer AI for this task?\n{{q1_prefer_ai}}\n\nHow will you measure success?\n{{q1_success}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: How much guidance do you want to give the user?\nList the THREE essentials:\n{{q5_minimum}}\n\nList THREE assumptions you might need to correct:\n{{q5_assumptions}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n\nCan users control how human the AI feels?\n{{q6_control_human}}\n\nOther humanizing design elements (e.g. avatar):\n{{q6_humanizing_extra}}\n\n{{q6_notes}}\n\nQuestion 7: How much control should the user have?\nSelected ways to increase user control:\n{{q7_control}}\n\nNotes:\n{{q7_notes}}\n\nQuestion 8: How to manage trust?\n{{q8_trust}}\n\nHow will you handle errors?\n{{q8_errors}}\n\n{{q8_notes}}\n`;
 
 export const STEPS: WorkbookStep[] = [
   {
@@ -59,7 +59,7 @@ export const STEPS: WorkbookStep[] = [
       },
       {
         id: "q1_solution",
-        label: "How does AI help address each of these frictions?",
+        label: "How does AI help address each friction?",
         helpText:
           "How AI can help: Understand, Create, Decide, or Act",
         type: "longText",
@@ -194,14 +194,14 @@ export const STEPS: WorkbookStep[] = [
       {
         id: "q6_tone",
         label: "What is the tone?",
-        helpText: "Is it neutral, mechanical,professional, friendly, empathetic or something else?",
+        helpText: "Is it neutral, mechanical, professional, friendly, empathetic or something else?",
         type: "longText",
         placeholder: "Enter your response…",
       },
       {
         id: "q6_competency",
         label: "How will you frame its level of competence?",
-        helpText: "Set user expectations about your AI's ability.",
+        helpText: "Set user expectations about your product/feature's capabilities.",
         type: "radio",
         options: ["Beginner", "Intermediate", "Expert"],
       },
@@ -210,6 +210,13 @@ export const STEPS: WorkbookStep[] = [
         label: "Can users control how human the AI feels?",
         helpText:
           "Can they adjust the name, tone, personality, etc.? If so, how?",
+        type: "longText",
+        placeholder: "Enter your response…",
+      },
+      {
+        id: "q6_humanizing_extra",
+        label:
+          "Are there any other humanizing design elements you want to include e.g. an avatar?",
         type: "longText",
         placeholder: "Enter your response…",
       },
