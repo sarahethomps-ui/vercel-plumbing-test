@@ -98,7 +98,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q2_mental_model",
         label: "Which mental model is the best fit for your product/feature?",
         helpText:
-          "e.g., Tool, Engine, Workspace, Assistant, Companion, or another metaphor. Pick one.",
+          "Consider options like Tool, Engine, Workspace, Assistant, Companion, or another metaphor. Pick one.",
         type: "longText",
         placeholder: "Enter your response…",
       },
