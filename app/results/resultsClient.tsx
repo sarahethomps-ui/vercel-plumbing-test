@@ -95,33 +95,45 @@ export function ResultsClient() {
       }
     >
       <div className="space-y-6">
-        <div className="no-print flex items-center gap-2 rounded-xl bg-slate-50 p-1">
-          <button
-            type="button"
-            onClick={() => setTab("answers")}
-            className={[
-              "h-9 rounded-lg px-4 text-sm font-semibold",
-              tab === "answers" ? "bg-white text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900",
-            ].join(" ")}
-          >
-            Answers
-          </button>
-          <button
-            type="button"
-            onClick={() => setTab("prompt")}
-            className={[
-              "h-9 rounded-lg px-4 text-sm font-semibold",
-              tab === "prompt" ? "bg-white text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900",
-            ].join(" ")}
-          >
-            Prompt
-          </button>
+        <div className="no-print flex flex-col gap-3 rounded-xl bg-slate-50 p-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:p-1">
+          <div className="flex shrink-0 gap-2">
+            <button
+              type="button"
+              onClick={() => setTab("answers")}
+              className={[
+                "h-9 rounded-lg px-4 text-sm font-semibold",
+                tab === "answers" ? "bg-white text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900",
+              ].join(" ")}
+            >
+              Answers
+            </button>
+            <button
+              type="button"
+              onClick={() => setTab("prompt")}
+              className={[
+                "h-9 rounded-lg px-4 text-sm font-semibold",
+                tab === "prompt" ? "bg-white text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900",
+              ].join(" ")}
+            >
+              Prompt
+            </button>
+          </div>
 
-          <div className="ml-auto flex items-center gap-2 pr-1">
-            <Button type="button" variant="secondary" onClick={onCopyAnswers}>
+          <div className="grid w-full min-w-0 grid-cols-2 gap-2 sm:flex sm:w-auto sm:shrink-0 sm:justify-end sm:gap-2 sm:pr-1">
+            <Button
+              type="button"
+              variant="secondary"
+              className="min-w-0 justify-center text-center text-xs sm:text-sm"
+              onClick={onCopyAnswers}
+            >
               {copied === "answers" ? "Copied" : "Copy Answers"}
             </Button>
-            <Button type="button" variant="secondary" onClick={onCopyPrompt}>
+            <Button
+              type="button"
+              variant="secondary"
+              className="min-w-0 justify-center text-center text-xs sm:text-sm"
+              onClick={onCopyPrompt}
+            >
               {copied === "prompt" ? "Copied" : "Copy Prompt"}
             </Button>
           </div>
