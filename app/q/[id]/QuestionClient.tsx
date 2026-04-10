@@ -3,7 +3,7 @@
 import React from "react";
 import { STEPS, type WorkbookStep } from "../../../config/workbook";
 import { useWorkbook } from "../../providers";
-import { Button, LinkButton } from "../../../components/Button";
+import { LinkButton } from "../../../components/Button";
 import {
   FieldLabel,
   MultiSelectGroup,
@@ -66,8 +66,6 @@ export function QuestionClient({ stepId }: { stepId: number }) {
 
   if (!step) return null;
 
-  const onReset = () => dispatch({ type: "reset" });
-
   return (
     <WorkbookShell rightBadge={<ProgressPill current={stepId} total={8} />}>
       <div className="space-y-6">
@@ -94,17 +92,12 @@ export function QuestionClient({ stepId }: { stepId: number }) {
         </div>
 
         <div className="flex items-center justify-between pt-2">
-          <div className="flex items-center gap-3">
-            <LinkButton
-              href={stepId === 1 ? "/" : `/pause/${stepId - 1}`}
-              variant="secondary"
-            >
-              Back
-            </LinkButton>
-            <Button type="button" variant="ghost" onClick={onReset}>
-              Reset
-            </Button>
-          </div>
+          <LinkButton
+            href={stepId === 1 ? "/" : `/pause/${stepId - 1}`}
+            variant="secondary"
+          >
+            Back
+          </LinkButton>
 
           <LinkButton
             href={stepId === 8 ? "/results" : `/pause/${stepId}`}

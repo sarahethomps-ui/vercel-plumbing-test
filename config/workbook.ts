@@ -51,9 +51,9 @@ export const STEPS: WorkbookStep[] = [
       },
       {
         id: "q1_problem",
-        label: "Which user frictions are you addressing?",
+        label: "Which user frictions are you addressing with your product/feature?",
         helpText:
-          "Choose all that apply: Volume, Discovery, Expertise, Quality, Decision, Time. Briefly describe each one you select.",
+          "Choose all that apply: Volume, Discovery, Expertise, Quality, Decision, Time, or Other. Briefly describe each one you select.",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -61,7 +61,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q1_solution",
         label: "How does AI address those frictions?",
         helpText:
-          "Consider whether AI helps the user Understand, Create, Decide, or Act.",
+          "Consider whether AI helps the user Understand, Create, Decide, or Act. Briefly describe each one you select.",
         type: "longText",
         placeholder: "Enter your response…",
       },

@@ -63,7 +63,7 @@ function AnswerRollup({ answers }: { answers: Record<string, string> }) {
 }
 
 export function ResultsClient() {
-  const { state, dispatch } = useWorkbook();
+  const { state } = useWorkbook();
   const [tab, setTab] = React.useState<Tab>("answers");
   const [copied, setCopied] = React.useState<null | "answers" | "prompt">(null);
 
@@ -83,8 +83,6 @@ export function ResultsClient() {
   };
 
   const onPrint = () => window.print();
-
-  const onReset = () => dispatch({ type: "reset" });
 
   return (
     <WorkbookShell
@@ -151,14 +149,9 @@ export function ResultsClient() {
           <LinkButton href="/q/8" variant="secondary">
             Back
           </LinkButton>
-          <div className="flex items-center gap-3">
-            <Button type="button" variant="ghost" onClick={onReset}>
-              Reset
-            </Button>
-            <LinkButton href="/" variant="primary">
-              Start over
-            </LinkButton>
-          </div>
+          <LinkButton href="/" variant="primary">
+            Start over
+          </LinkButton>
         </div>
       </div>
     </WorkbookShell>
