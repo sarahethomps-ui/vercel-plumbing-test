@@ -154,7 +154,7 @@ export const STEPS: WorkbookStep[] = [
     fields: [
       {
         id: "q4_form_factor",
-        label: "What form factor fitsyour product/feature?",
+        label: "What form factor is the best fit for your product/feature?",
         helpText: "Pick an interface that fits the user and the task.",
         type: "radio",
         options: [
