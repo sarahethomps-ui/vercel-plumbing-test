@@ -26,7 +26,7 @@ export const PAUSE_MESSAGE = "Please wait for the instructor before continuing."
 // For now, this is a safe placeholder that we’ll replace verbatim later.
 export const PROMPT_PREAMBLE = `Build a one-shot, click-through proof-of-concept prototype based on the answers to the 8 questions below.\n\nThe goal is to demonstrate exceptionally well-designed AI-informed UX and strong general UX for the given use case.\n\nIn addition to the prompt below, the prototype should look professionally designed and long enough to be apparent in the design. The prototype must look professionally designed and should be usable. There is no back-end; simulate AI behavior with believable sample content and state changes that are revealed by clicking through screens.\n\nFocus on clarity, speed to first success, best-practice, ethical AI patterns.\n\nInclude a gear icon to visit a page where you reiterate all of the requirements for each of the 8 questions, along with that requirement was specifically manifest in the design of the app you build.\n`;
 
-export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nHow does AI help address this friction?\n{{q1_solution}}\n\nIs AI actually needed here?\n{{q1_ai_needed}}\n\nDo users prefer AI for this task?\n{{q1_prefer_ai}}\n\nHow will you measure success?\n{{q1_success}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nWhat expectations and associations does this mental model create for users?\n{{q2_behavior_expectations}}\n\nNotes on why this model fits:\n{{q2_notes}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nIf the AI is visible, what value statement will users see?\n{{q3_value_statement}}\n\nIf the AI is behind the scenes, how will users discover or learn about it — and should they?\n{{q3_behind_scenes_discovery}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: How much guidance do you want to give the user?\nList the THREE essentials:\n{{q5_minimum}}\n\nList THREE assumptions you might need to correct:\n{{q5_assumptions}}\n\nWhere in the user journey will you deliver this guidance?\n{{q5_notes}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n\nCan users control how human the AI feels?\n{{q6_control_human}}\n\nOther humanizing design elements (e.g. avatar):\n{{q6_humanizing_extra}}\n\nIs there a risk of making your AI product/feature feel too human? What is it?\n{{q6_too_human_risk}}\n\n{{q6_notes}}\n\nQuestion 7: How much control should the user have?\nSelected ways to increase user control:\n{{q7_control}}\n\nWhere does your product sit on the automation spectrum?\n{{q7_automation_spectrum}}\n\nExplain your choices:\n{{q7_automation_explain}}\n\nNotes:\n{{q7_notes}}\n\nQuestion 8: How to manage trust?\nHow will you help users gauge how much to trust the output? Select all that apply.\n{{q8_trust}}\n\nHow will you handle errors?\n{{q8_errors}}\n\n{{q8_notes}}\n`;
+export const PROMPT_POSTAMBLE = `\n\nQuestion 1: Should it even be AI?\nHere is what we are designing:\n{{q1_feature}}\n\nThis is the problem the app will solve:\n{{q1_problem}}\n\nHow does AI help address this friction?\n{{q1_solution}}\n\nIs AI actually needed here?\n{{q1_ai_needed}}\n\nDo users prefer AI for this task?\n{{q1_prefer_ai}}\n\nHow will you measure success?\n{{q1_success}}\n\nThe target audience is:\n{{q1_target_user}}\n\nQuestion 2: Which mental model is the best fit?\n{{q2_mental_model}}\n\nWhat expectations and associations does this mental model create for users?\n{{q2_behavior_expectations}}\n\nNotes on why this model fits:\n{{q2_notes}}\n\nQuestion 3: How salient is AI?\n{{q3_salience}}\n\nIf the AI is visible, what value statement will users see?\n{{q3_value_statement}}\n\nIf the AI is behind the scenes, how will users discover or learn about it — and should they?\n{{q3_behind_scenes_discovery}}\n\nQuestion 4: What is the form factor?\n{{q4_form_factor}}\n\nQuestion 5: How much guidance do you want to give the user?\nList the THREE essentials:\n{{q5_minimum}}\n\nList THREE assumptions you might need to correct:\n{{q5_assumptions}}\n\nWhere in the user journey will you deliver this guidance?\n{{q5_notes}}\n\nQuestion 6: How human should it be?\nHas a name: {{q6_has_name}}\nName: {{q6_name}}\nTone: {{q6_tone}}\nCompetency: {{q6_competency}}\n\nCan users control how human the AI feels?\n{{q6_control_human}}\n\nOther humanizing design elements (e.g. avatar):\n{{q6_humanizing_extra}}\n\nIs there a risk of making your AI product/feature feel too human? What is it?\n{{q6_too_human_risk}}\n\n{{q6_notes}}\n\nQuestion 7: How much control should the user have?\nSelected ways to increase user control:\n{{q7_control}}\n\nWhere does your product sit on the automation spectrum?\n{{q7_automation_spectrum}}\n\nNOTES: Explain why you made your choices.\n{{q7_notes}}\n\nQuestion 8: How to manage trust?\nHow will you help users gauge how much to trust the output? Select all that apply.\n{{q8_trust}}\n\nHow will you handle errors?\n{{q8_errors}}\n\n{{q8_notes}}\n`;
 
 export const STEPS: WorkbookStep[] = [
   {
@@ -296,22 +296,16 @@ export const STEPS: WorkbookStep[] = [
         type: "radio",
         options: [
           "User acts, AI assists — The user drives; AI offers suggestions or information along the way.",
-          "AI drafts, user decides — AI produces an output; the user reviews and approves before anything happens.",
+          "AI proposes, user decides — AI produces an output; the user reviews and approves before anything happens.",
           "AI acts, user oversees — AI executes automatically; the user can review, adjust, or override after the fact.",
-          "Other",
+          "Other — Describe in the notes below.",
         ],
-      },
-      {
-        id: "q7_automation_explain",
-        label: "Explain your choices",
-        helpText:
-          "Required if you selected Other. You can also add nuance for any option.",
-        type: "longText",
-        placeholder: "Enter your response…",
       },
       {
         id: "q7_notes",
         label: "NOTES: Explain why you made your choices.",
+        helpText:
+          "Required if you selected Other. You can also add nuance for any option.",
         type: "longText",
         placeholder: "Add your notes here…",
       },
