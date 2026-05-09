@@ -61,7 +61,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q1_solution",
         label: "How does AI address those frictions?",
         helpText:
-          "Consider whether AI helps the user Understand, Create, Decide, or Act. Briefly describe each one you select.",
+          "Consider whether AI can Clarify, Create, Choose, or Act for them. Briefly describe each one you select.",
         type: "longText",
         placeholder: "Enter your response…",
       },
