@@ -53,7 +53,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q1_problem",
         label: "Which user frictions are you addressing with your product/feature?",
         helpText:
-          "Choose all that apply: Volume, Discovery, Expertise, Quality, Decision, Time, or Other. Briefly describe each one you select.",
+          "Choose all that apply and briefly describe: Overwhelmed: too much information or not enough context; Stuck: they don’t have the skill or confidence to get it right; Uncertain: too many choices or unclear outcomes; Burdened: too much effort or not worth the time.",
         type: "longText",
         placeholder: "Enter your response…",
       },
