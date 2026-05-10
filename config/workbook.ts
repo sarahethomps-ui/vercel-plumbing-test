@@ -53,7 +53,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q1_problem",
         label: "Which user frictions are you addressing with your product/feature?",
         helpText:
-          "Choose all that apply and briefly describe:\nOverwhelmed: too much information or not enough context\nStuck: they don’t have the skill or confidence to get it right\nUncertain: too many choices or unclear outcomes\nBurdened: too much effort or not worth the time",
+          "Choose all that apply and briefly describe:\nOverwhelmed: too much information, info hard to find, or not enough context\nStuck: they don’t have the abilty (skill,confidence etc.) to get a quality output\nUncertain: too many choices or unclear outcomes\nBurdened: too much effort or not worth the time",
         type: "longText",
         placeholder: "Enter your response…",
       },
@@ -61,7 +61,7 @@ export const STEPS: WorkbookStep[] = [
         id: "q1_solution",
         label: "How does AI address those frictions?",
         helpText:
-          "Consider whether AI can Clarify, Create, Choose, or Act for them. Briefly describe each one you select.",
+          "Overwhelmed -> AI CLARIFIES by summarizing, organizing, and surfacing what matters most.\n\nStuck -> AI CREATES by generating a first pass, offering examples, or helping users get started.\n\nUncertain -> AI HELPS CHOOSE by comparing options, highlighting tradeoffs, and making recommendations.\n\nBurdened -> AI ACTS on behalf of users by removing manual steps, completing repetitive tasks, or working autonomously.",
         type: "longText",
         placeholder: "Enter your response…",
       },
