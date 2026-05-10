@@ -11,7 +11,9 @@ export function FieldLabel({
     <div className="space-y-1">
       <div className="text-sm font-semibold text-slate-900">{title}</div>
       {description ? (
-        <div className="text-sm text-slate-500">{description}</div>
+        <div className="whitespace-pre-line text-sm text-slate-500">
+          {description}
+        </div>
       ) : null}
     </div>
   );
