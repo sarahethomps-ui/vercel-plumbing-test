@@ -163,7 +163,6 @@ export const STEPS: WorkbookStep[] = [
           "Hybrid",
           "Invisible",
           "Voice",
-          "Command line",
           "Ambient/Proactive",
           "Other",
         ],
