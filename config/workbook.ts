@@ -321,7 +321,7 @@ export const STEPS: WorkbookStep[] = [
           "How will you help users gauge how much to trust the output? Select all that apply.",
         type: "multiSelect",
         options: [
-          `Capability reminders — Set expectations upfront about what the AI can and can't do. e.g., "I can sometimes be wrong — please double check."`,
+          `Capability reminders — Set expectations upfront about what the AI can and can't do. e.g., "I can sometimes be wrong, please double check."`,
           "Confidence levels — Signal how sure the AI is about a given output. e.g., Low / Medium / High.",
           `Source transparency — Show where the output came from. e.g., "Based on data from [X, Y]."`,
           `Reasoning explanations — Tell the user why the AI did what it did. e.g., "I suggested this because…"`,
