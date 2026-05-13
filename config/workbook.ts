@@ -246,7 +246,7 @@ export const STEPS: WorkbookStep[] = [
       {
         id: "q6_tone",
         label: "What tone should the AI convey?",
-        helpText: "Tone isn't just conveyed through chat. It comes through in microcopy, notifications, error messages, animations, voice, etc. Is the tone neutral, mechanical, professional, friendly, empathetic, a blend or something else?.",
+        helpText: "Tone isn't just conveyed through chat. It comes through in microcopy, notifications, error messages, animations, voice, etc. Is the tone neutral, mechanical, professional, friendly, empathetic, a blend or something else?",
         type: "longText",
         placeholder: "Enter your response…",
       },
