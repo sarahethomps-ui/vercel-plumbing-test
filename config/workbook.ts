@@ -52,18 +52,26 @@ export const STEPS: WorkbookStep[] = [
       {
         id: "q1_problem",
         label: "Which user frictions are you addressing with your product/feature?",
-        helpText:
-          "Choose all that apply and briefly describe:\n\nOverwhelmed: too much information, info hard to find, or not enough context\n\nStuck: they don’t have the ability (skill, confidence, etc.) to get a quality output\n\nUncertain: too many choices or unclear outcomes\n\nBurdened: too much effort or not worth the time",
-        type: "longText",
-        placeholder: "Enter your response…",
+        helpText: "Choose all that apply.",
+        type: "multiSelect",
+        options: [
+          "Overwhelmed: too much information, info hard to find, or not enough context",
+          "Stuck: they don’t have the ability (skill, confidence, etc.) to get a quality output",
+          "Uncertain: too many choices or unclear outcomes",
+          "Burdened: too much effort or not worth the time",
+        ],
       },
       {
         id: "q1_solution",
         label: "How does AI address those frictions?",
-        helpText:
-          "Overwhelmed -> AI CLARIFIES by summarizing, organizing, and surfacing what matters most.\n\nStuck -> AI CREATES by generating a first pass, offering examples, or helping users get started.\n\nUncertain -> AI HELPS CHOOSE by comparing options, highlighting tradeoffs, and making recommendations.\n\nBurdened -> AI ACTS on behalf of users by removing manual steps, completing repetitive tasks, or working autonomously.",
-        type: "longText",
-        placeholder: "Enter your response…",
+        helpText: "Choose all that apply.",
+        type: "multiSelect",
+        options: [
+          "Overwhelmed → AI CLARIFIES by summarizing, organizing, and surfacing what matters most.",
+          "Stuck → AI CREATES by generating a first pass, offering examples, or helping users get started.",
+          "Uncertain → AI HELPS CHOOSE by comparing options, highlighting tradeoffs, and making recommendations.",
+          "Burdened → AI ACTS on behalf of users by removing manual steps, completing repetitive tasks, or working autonomously.",
+        ],
       },
       {
         id: "q1_ai_needed",
